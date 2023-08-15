@@ -18,9 +18,9 @@ you can put your all WSIs in a folder.
 ~~~
 python scn2patch.py <path/to/your/WSIfolder>
 ~~~
-2. get the bounding box
-if you want to use faster-rcnn as the model:
-~~~
-python gt_bbox.py 
-~~~
+2. get the bounding box 
+  if you want to use faster-rcnn as the model:
+  ~~~
+  python gt_bbox.py 
+  ~~~
 
