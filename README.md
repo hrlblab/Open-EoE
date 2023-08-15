@@ -19,20 +19,20 @@ you can put your all WSIs in a folder.
 python scn2patch.py <path/to/your/WSIfolder>
 ~~~
 2. get the bounding box
-   
-if you want to use faster-rcnn as the model:
-~~~
-python gt_bbox.py faster
-~~~
-if you want to use mask-rcnn as the model:
-~~~
-python gt_bbox.py mask
-~~~
-if you want to use centernet as the model:
-~~~
-python gt_bbox.py center
-~~~
-if you want to use all of these three models:
-~~~
-python gt_bbox.py all
-~~~
+      
+   if you want to use faster-rcnn as the model:
+   ~~~
+   python gt_bbox.py faster
+   ~~~
+   if you want to use mask-rcnn as the model:
+   ~~~
+   python gt_bbox.py mask
+   ~~~
+   if you want to use centernet as the model:
+   ~~~
+   python gt_bbox.py center
+   ~~~
+   if you want to use all of these three models:
+   ~~~
+   python gt_bbox.py all
+   ~~~
