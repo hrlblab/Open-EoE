@@ -7,3 +7,20 @@ Eosinophilic Esophagitis (EoE) is a chronic, immune/antigen-mediated esophageal 
 
 ## Installation
 Please refer to [INSTALL.md](doc/INSTALL.md) for installation instructions of the detection phase.
+
+## Model
+The trained model can be found [here](https://drive.google.com/drive/folders/1_rKfvtnVKZWWacE3peFIzr3EQx2JQyF-?usp=drive_link)
+Please put the folder into the floder <mmdetection/work_dirs>. If there is no folder in folder <mmdetection> please create one.
+
+## Get Started
+you can put your all WSIs in a folder.
+1. Get the patch images
+~~~
+python scn2patch.py <path/to/your/WSIfolder>
+~~~
+2. get the bounding box
+if you want to use faster-rcnn as the model:
+~~~
+python gt_bbox.py 
+~~~
+
