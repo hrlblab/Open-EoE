@@ -51,6 +51,6 @@ you can put your all WSIs in a folder.
 4. get the maximum Eos count in HPF
 
    ~~~
-   python gt_max.py <model_name>      model_name can be: faster; mask; center; ensemble
+   python gt_max.py <model_name>      model_name: faster; mask; center; ensemble
    ~~~
 
