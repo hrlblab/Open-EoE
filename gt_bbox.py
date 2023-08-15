@@ -74,22 +74,31 @@ def get_bbox(folder_path, config_file, checkpoint_file,model_name):
         with open('{}/{}-{}.geojson'.format(sub_folders,model_name), "w") as f:
             json.dump(geojson_data, f)
 
-if __name__ == '__main__':
-    folder_path = 'Patches'
-
+def choose_model(folder_path, model):
     config_file1 = 'mmdetection/configs/eoe/faster-rcnn_r50_fpn_1x.py'
     checkpoint_file1 = 'mmdetection/work_dirs/faster-rcnn_r50_fpn_1x/epoch_20.pth'
-    faster = config_file1.split('/')[-1].split('-')[0]
-
     config_file2 = 'mmdetection/configs/eoe/mask-rcnn_r50_fpn_1x.py'
-    checkpoint_file2 = 'mmdetection/work_dirs/mask-rcnn_r50_fpn_1x/epoch_20.pth'
-    mask = config_file2.split('/')[-1].split('-')[0]
-
+    checkpoint_file2 = 'mmdetection/work_dirs/mask-rcnn_r50_fpn_1x/epoch_20.pth'  
     config_file3 = 'mmdetection/configs/eoe/centernet_r50_fpn_1x.py'
     checkpoint_file3 = 'mmdetection/work_dirs/centernet_r50_fpn_1x/epoch_20.pth'
+    faster = config_file1.split('/')[-1].split('-')[0]
+    mask = config_file2.split('/')[-1].split('-')[0]
     center = config_file3.split('/')[-1].split('_')[0]
 
-    get_bbox(folder_path, config_file1, checkpoint_file1, faster)
-    get_bbox(folder_path, config_file2, checkpoint_file2, mask)
-    get_bbox(folder_path, config_file3, checkpoint_file3, center)
+    if model == 'faster':
+        get_bbox(folder_path, config_file1, checkpoint_file1, faster)
+    if model == 'mask':      
+        get_bbox(folder_path, config_file2, checkpoint_file2, mask)
+    if model == 'center':
+        get_bbox(folder_path, config_file3, checkpoint_file3, center)
+    if model == 'all':
+        get_bbox(folder_path, config_file1, checkpoint_file1, faster)
+        get_bbox(folder_path, config_file2, checkpoint_file2, mask)
+        get_bbox(folder_path, config_file3, checkpoint_file3, center)        
+
+
+if __name__ == '__main__':
+    folder_path = 'Patches'
+    model = sys.argv[0]
+    choose_model(folder_path, model)
 
