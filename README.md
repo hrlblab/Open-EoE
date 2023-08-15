@@ -15,10 +15,12 @@ Please put the folder into the floder <mmdetection/work_dirs>. If there is no fo
 ## Get Started
 you can put your all WSIs in a folder.
 1. Get the patch images
-~~~
-python scn2patch.py <path/to/your/WSIfolder>
-~~~
-2. get the bounding box
+   
+   ~~~
+   python scn2patch.py <path/to/your/WSIfolder>
+   ~~~
+   
+3. get the bounding box
       
    if you want to use faster-rcnn as the model:
    
@@ -41,3 +43,14 @@ python scn2patch.py <path/to/your/WSIfolder>
    ~~~ 
    python gt_bbox.py all
    ~~~
+4. get the ensemble result
+
+   ~~~
+   python gt_ensemble.py <path/to/your/WSIfolder>
+   ~~~
+5. get the maximum Eos count in HPF
+
+   ~~~
+   python gt_max.py <model_name>      model_name can be: faster; mask; center; ensemble
+   ~~~
+
