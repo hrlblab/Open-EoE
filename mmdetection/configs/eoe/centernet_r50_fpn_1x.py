@@ -9,8 +9,8 @@ model = dict(
 
 
 # Modify dataset related settings
-data_root = 'C:/Users/x7754/OneDrive/Desktop/mmdet/eoe/'
-# /hpc/group/tdunn/jx132/mmdet/eoe/
+data_root = '../../../eoe'
+
 
 metainfo = {
     'classes': ('eos','papilla','rbc','cluster'),

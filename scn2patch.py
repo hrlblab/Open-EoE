@@ -4,6 +4,7 @@ os.environ["OPENCV_IO_MAX_IMAGE_PIXELS"] = pow(2,40).__str__()
 import numpy as np
 import gc
 import cv2
+import sys
 if hasattr(os, 'add_dll_directory'):
     with os.add_dll_directory(r'C:\openslide-win64-20230414\bin'):
         import openslide
@@ -62,10 +63,10 @@ def scn_to_patch(input_path, patch_size, output_path):
 
 
 if __name__ == '__main__':
-    path = 'WSIs'
+    input_path = sys.argv[0]
     patch_size = 512
-    output_path = 'Patches'
+    output_path = sys.argv[1]
     if not os.path.exists(output_path):
         os.makedirs(output_path)
     logging.basicConfig(filename="failed_file.log", filemode="w", level=logging.INFO)
-    scn_to_patch(path, patch_size,output_path)
+    scn_to_patch(input_path, patch_size,output_path)

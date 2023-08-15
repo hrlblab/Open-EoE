@@ -9,8 +9,7 @@ model = dict(
 
 
 # Modify dataset related settings
-data_root = 'C:/Users/x7754/OneDrive/Desktop/mmdet/eoe/'
-# /hpc/group/tdunn/jx132/mmdet/eoe/
+data_root = '../../../eoe'
 
 metainfo = {
     'classes': ('eos','papilla','rbc','cluster'),
@@ -45,11 +44,6 @@ test_dataloader = dict(
 # 2 class
 val_evaluator = dict(ann_file=data_root + 'New_EoE_val2022.json')
 test_evaluator = dict(ann_file=data_root + 'New_EoE_test2022.json')
-
-
-# 4 class
-# val_evaluator = dict(ann_file=data_root + 'EoE_val2022.json')
-# test_evaluator = dict(ann_file=data_root + 'EoE_test2022.json')
 
 
 
