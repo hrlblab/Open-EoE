@@ -55,8 +55,8 @@ def calculate_max(path, model_name):
 
 
 if __name__ == "__main__": 
-    path = sys.argv[0]
-    model_name = sys.argv[1]
+    path = 'Patches'
+    model_name = sys.argv[0]
     radius = 1100
     stride = 10
     calculate_max(path, model_name)

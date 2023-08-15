@@ -4,7 +4,6 @@ from mmdet.registry import VISUALIZERS
 import mmcv
 import os
 import numpy as np
-from pathlib import Path
 import json
 import cv2
 import gc
@@ -76,7 +75,7 @@ def get_bbox(folder_path, config_file, checkpoint_file,model_name):
             json.dump(geojson_data, f)
 
 if __name__ == '__main__':
-    folder_path = sys.argv[0]
+    folder_path = 'Patches'
 
     config_file1 = 'mmdetection/configs/eoe/faster-rcnn_r50_fpn_1x.py'
     checkpoint_file1 = 'mmdetection/work_dirs/faster-rcnn_r50_fpn_1x/epoch_20.pth'

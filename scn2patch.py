@@ -65,7 +65,7 @@ def scn_to_patch(input_path, patch_size, output_path):
 if __name__ == '__main__':
     input_path = sys.argv[0]
     patch_size = 512
-    output_path = sys.argv[1]
+    output_path = 'Patches'
     if not os.path.exists(output_path):
         os.makedirs(output_path)
     logging.basicConfig(filename="failed_file.log", filemode="w", level=logging.INFO)

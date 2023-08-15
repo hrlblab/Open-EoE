@@ -85,6 +85,23 @@ if __name__ == "__main__":
         data = merge_data(file)
         processed_bboxes = process_bboxes(data)
         nms_bbox = nms(processed_bboxes, iou_threshold)
+        ensemble_geo = []
+        for coords in nms_bbox:
+            polys =  [[[coords[0], coords[1]], [coords[0], coords[3]], [coords[2], coords[3]], [coords[2], coords[1]], [coords[0], coords[1]]]]
+            ensemble_geo.append(polys)
+
+        geojson_data = {
+            "type": "Feature",
+            "id": "{}".format(file),
+            "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": ensemble_geo 
+        },
+        "properties": {"objectType": "annotation"}
+        }
         nms_bbox = [nms_bbox]
+
         with open('ensemble/{}-ensemble.json'.format(file), 'w') as file:
             json.dump(nms_bbox, file)
+        with open('ensemble/{}-ensemble.geojson'.format(file), 'w') as file:
+            json.dump(ensemble_geo, file)
