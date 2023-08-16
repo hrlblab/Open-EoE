@@ -54,3 +54,16 @@ you can put your all WSIs in a folder.
    python gt_max.py <model_name>      model_name: faster; mask; centernet; ensemble
    ~~~
 
+### Quick start
+
+#### Get our docker image
+
+```
+sudo docker pull 
+```
+#### Run Open-EoE
+First you need to put a folder include your data named ```WSIs``` in the container
+```
+#run the docker
+sudo docker run open-eoe 
+```
