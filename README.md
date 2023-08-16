@@ -64,6 +64,5 @@ sudo docker pull
 ### Run Open-EoE
 First you need to put a folder include your data named ```WSIs``` in the container
 ```
-#run the docker
 sudo docker run open-eoe 
 ```
